@@ -1,0 +1,112 @@
+@tailwind components;
+
+@layer components {
+	.wrapper-m {
+		@apply md:hidden flex items-stretch;
+	}
+
+	.wrapper {
+		@apply flex min-h-screen bg-card;
+	}
+
+	/* TOPBAR */
+
+	.m-topbar {
+		@apply md:hidden flex items-center justify-between h-16 py-6 px-2;
+	}
+
+	.topbar {
+		@apply relative hidden md:flex items-center justify-between h-16 px-8 bg-card border-b border-border;
+	}
+
+	.topbar .toggle-btn {
+		@apply absolute -left-2 top-4 z-10 p-0.5 w-5 h-8 rounded-sm;
+	}
+
+	/* SIDEBAR */
+
+	.sidebar {
+		@apply hidden md:fixed top-0 left-0 bottom-0 md:flex flex-col h-full w-64 border-r overflow-hidden transition-all duration-300 ease-in-out bg-card;
+	}
+
+	.sidebar-header {
+		@apply flex items-center h-16 w-64 px-6 transition-all duration-300 ease-in-out;
+		/*  border-b border-border */
+	}
+
+	.devider-y {
+		height: 0.0625rem;
+		@apply w-full bg-gradient-to-r from-transparent via-devider to-transparent;
+	}
+
+	.sidebar.toggled,
+	.sidebar-header.toggled {
+		@apply w-16;
+	}
+
+	/* SIDEBAR MENU */
+	.sidebar-content {
+		@apply grow pt-4 space-y-6;
+	}
+
+	.sidebar-content.scrollable {
+		@apply overflow-y-auto;
+	}
+
+	.sidebar.toggled .scrollable::-webkit-scrollbar {
+		@apply hidden;
+	}
+
+	.sidebar-footer {
+		@apply h-40;
+	}
+
+	/* CONTENT */
+
+	.app-container {
+		@apply flex flex-col w-full bg-background transition-all duration-300 ease-in-out;
+		/* md:ml-64 */
+	}
+
+	.app-content {
+		@apply grow p-6;
+	}
+
+	.app-content__header {
+		@apply flex justify-between;
+	}
+
+	.app-content h1 {
+		@apply text-xl;
+	}
+
+	/* SCROLLABLE */
+
+	.scrollable {
+		scrollbar-width: thin;
+		scrollbar-color: var(--border) var(--background);
+	}
+
+	.scrollable::-webkit-scrollbar {
+		width: 8px;
+	}
+
+	.scrollable::-webkit-scrollbar-track {
+		background: var(--background);
+		border-radius: 17px;
+	}
+
+	.scrollable::-webkit-scrollbar-thumb {
+		background-color: var(--border);
+		border-radius: 17px;
+		border: 1px solid var(--background);
+	}
+
+	.scroll-box {
+		@apply w-full overflow-y-scroll;
+	}
+
+	.scroll-box.auto {
+		@apply overflow-y-auto;
+	}
+}
