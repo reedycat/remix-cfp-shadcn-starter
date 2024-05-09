@@ -1,5 +1,5 @@
 {
-	"name": "remix-cfp-starter",
+	"name": "remix-cfp-shadcn-starter",
 	"private": true,
 	"sideEffects": false,
 	"type": "module",
